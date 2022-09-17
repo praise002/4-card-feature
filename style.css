@@ -35,6 +35,16 @@ h1, h2{
     margin-bottom: 0;
 }
 
+@media screen and (min-width:1024px) {
+    h1, h2{
+        font-size: 2.1rem;
+    }
+
+    h3{
+        font-size: 1.6rem;
+    }
+}
+
 h1{
     font-weight: var(--font-lighter);
     margin-bottom: 7px;
@@ -56,6 +66,15 @@ h1, .intro-content, .message{
 
 /* Intro */
 
+@media screen and (min-width:1024px){
+    .intro{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .intro-content{
     width: 300px;
     max-width: 100%;
@@ -63,11 +82,50 @@ h1, .intro-content, .message{
     font-weight: var(--font-medium);
 }
 
+@media screen and (min-width:1024px) {
+    .intro-content{
+        width: 48%;
+    }
+
+    .intro-content p{
+        font-size: 1.2rem;
+    }
+}
+
 /* Info */
 
 .info{
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (min-width:1024px) {
+    .info{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 20px;
+        grid-template-areas: "supervisor team-builder calculator" 
+                            "supervisor karma calculator";
+    }
+
+    .info--supervisor{
+        grid-area: supervisor;
+        align-self: center;
+    }
+    
+    .info--team-builder{
+        grid-area: team-builder;
+    }
+    
+    .info--karma{
+        grid-area: karma;
+    }
+    
+    .info--calculator{
+        grid-area: calculator;
+        align-self: center;
+    }
 }
 
 .info-box{
@@ -80,6 +138,12 @@ h1, .intro-content, .message{
 
 .message p{
     margin-top: 7px;
+}
+
+@media screen and (min-width:1024px) {
+    .message p {
+        font-size: 1.2rem;
+    }
 }
 
 .image{
@@ -96,6 +160,14 @@ h1, .intro-content, .message{
     border-top: 3px solid var(--blue);
 }
 
-.info--supervisor{
+.info--team-builder{
+    border-top: 3px solid var(--red);
+}
+
+.info--karma{
+    border-top: 3px solid var(--orange);
+}
+
+.info--calculator{
     border-top: 3px solid var(--blue);
 }
